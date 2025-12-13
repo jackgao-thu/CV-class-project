@@ -1,0 +1,136 @@
+{
+  "per_pathology": [
+    {
+      "name": "Medical material",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.8970055939453768
+    },
+    {
+      "name": "Arterial wall calcification",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.7147087857847977
+    },
+    {
+      "name": "Cardiomegaly",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.8930569266205989
+    },
+    {
+      "name": "Pericardial effusion",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.9256334320500165
+    },
+    {
+      "name": "Coronary artery wall calcification",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.7482724580454096
+    },
+    {
+      "name": "Hiatal hernia",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.8627838104639685
+    },
+    {
+      "name": "Lymphadenopathy",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.7403751233958539
+    },
+    {
+      "name": "Emphysema",
+      "precision": 0.19743336623889438,
+      "recall": 1.0,
+      "f1": 0.3297609233305854,
+      "accuracy": 0.19743336623889438
+    },
+    {
+      "name": "Atelectasis",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.7653833497861139
+    },
+    {
+      "name": "Lung nodule",
+      "precision": 0.44784468575189207,
+      "recall": 1.0,
+      "f1": 0.6186363636363637,
+      "accuracy": 0.44784468575189207
+    },
+    {
+      "name": "Lung opacity",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.6103981572885818
+    },
+    {
+      "name": "Pulmonary fibrotic sequela",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.7265547877591313
+    },
+    {
+      "name": "Pleural effusion",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.8762750904902928
+    },
+    {
+      "name": "Mosaic attenuation pattern",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.9167489305692662
+    },
+    {
+      "name": "Peribronchial thickening",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.8831852583086541
+    },
+    {
+      "name": "Consolidation",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.8088186903586706
+    },
+    {
+      "name": "Bronchiectasis",
+      "precision": 0.10858835143139191,
+      "recall": 1.0,
+      "f1": 0.19590382902938558,
+      "accuracy": 0.10858835143139191
+    },
+    {
+      "name": "Interlobular septal thickening",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.9180651530108588
+    }
+  ],
+  "macro": {
+    "precision": 0.04188146685678769,
+    "recall": 0.16666666666666666,
+    "f1": 0.06357228422201859,
+    "accuracy": 0.724507330627765
+  }
+}
