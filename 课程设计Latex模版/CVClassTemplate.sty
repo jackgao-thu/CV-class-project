@@ -1,0 +1,470 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                             %%
+%%    清华大学计算机系《计算机视觉》课程设计LaTex模板                 %%
+%%    Author: 魏彤                                              %%
+%%    Date: 2024.03                                            %%
+%%                                                             %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ProvidesPackage{CVClassTemplate}
+
+%---------------------------------------------------------------%
+% Preload packages
+\usepackage{ctex}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,fancyhdr}
+\usepackage{url}
+\usepackage{ifthen}
+\usepackage{times}
+\usepackage{ifpdf}
+ \usepackage{graphicx}
+
+%---------------------------------------------------------------%
+% Page setting
+\usepackage[margin=1in]{geometry}
+\renewcommand{\baselinestretch}{1.3}
+\parindent 21pt
+
+%---------------------------------------------------------------%
+% Paper title blank
+\makeatletter
+\def\@maketitle{%
+ \newpage
+  \null
+  \vskip 0em%
+ \begin{center}%
+ \let \footnote \thanks
+   {\LARGE \@title \par}%
+   \vskip 1.5em%
+   {\large
+     \lineskip .5em%
+     \begin{tabular}[t]{c}%
+       \@author
+     \end{tabular}\par}%
+   \vskip 1em%
+   {\large \@date}%
+ \end{center}%
+ \par
+ \vskip 1.5em}
+\makeatother
+
+%---------------------------------------------------------------%
+% Section heading & bibliography fonts
+\usepackage{sectsty}
+\sectionfont{\large}
+\subsectionfont{\normalsize}
+
+%---------------------------------------------------------------%
+% Math environment setting
+\newtheoremstyle{mythm}{3pt}{3pt}{}{}{\bfseries}{}{5mm}{}
+\theoremstyle{mythm}
+
+\newtheorem{definition}{\hspace{2em}{\bf{定义}}}
+\newtheorem*{definition*}{\hspace{2em}{\bf{定义}}}
+
+\newtheorem{proposition}{\hspace{2em}{\bf{命题}}}
+\newtheorem*{proposition*}{\hspace{2em}{\bf{命题}}}
+
+\newtheorem{property}{\hspace{2em}{\bf{性质}}}
+\newtheorem*{property*}{\hspace{2em}{\bf{性质}}}
+
+\newtheorem{theorem}{\hspace{2em}{\bf{定理}}}
+\newtheorem*{theorem*}{\hspace{2em}{\bf{定理}}}
+
+\newtheorem{lemma}{\hspace{2em}{\bf{引理}}}
+\newtheorem*{lemma*}{\hspace{2em}{\bf{引理}}}
+
+\newtheorem{corollary}{\hspace{2em}{\bf{推论}}}
+\newtheorem*{corollary*}{\hspace{2em}{\bf{推论}}}
+
+\newtheorem{axiom}{\hspace{2em}{\bf{公理}}}
+\newtheorem*{axiom*}{\hspace{2em}{\bf{公理}}}
+
+\newtheorem{exercise}{\hspace{2em}{\bf{习题}}}
+\newtheorem*{exercise*}{\hspace{2em}{\bf{习题}}}
+
+\newtheorem{question}{\hspace{2em}{\bf{问题}}}
+\newtheorem*{question*}{\hspace{2em}{\bf{问题}}}
+
+\newtheorem{example}{\hspace{2em}{\bf{例}}}
+\newtheorem*{example*}{\hspace{2em}{\bf{例}}}
+
+
+\newtheorem{notation}{\hspace{2em}{\bf{记号}}}
+\newtheorem*{notation*}{\hspace{2em}{\bf{记号}}}
+
+\newtheorem{remark}{\hspace{2em}{\bf{注记}}}
+\newtheorem*{remark*}{\hspace{2em}{\bf{注记}}}
+
+\renewenvironment{proof}[1][证明]{\textbf{#1:~~~}}{\hfill\hspace{1cm}$\square$}
+
+
+%---------------------------------------------------------------%
+% Title page information & commands
+
+% Page header author list
+\newcommand{\myauthors}{%
+    \ifthenelse{\equal{\mysecondauthor}{null} 
+	\and \equal{\mythirdauthor}{null} 
+	\and \equal{\myfourthauthor}{null}
+          \and \equal{\myfifthauthor}{null}}{\myfirstauthor}{%
+        \ifthenelse{\equal{\mythirdauthor}{null}
+	\and \equal{\myfourthauthor}{null}
+           \and \equal{\myfifthauthor}{null}}{\myfirstauthor, \mysecondauthor}{%
+      \ifthenelse{\equal{\myfourthauthor}{null}
+           \and \equal{\myfifthauthor}{null}}{\myfirstauthor, \mysecondauthor, \mythirdauthor}{%
+      \ifthenelse{\equal{\myfifthauthor}{null}}
+     {\myfirstauthor, \mysecondauthor, \mythirdauthor, \myfourthauthor}{%
+  \myfirstauthor, \mysecondauthor, \mythirdauthor, \myfourthauthor, \myfifthauthor}
+    }
+}
+}
+}
+
+% Title page author list
+\newcommand{\myoneauthors}{\author{{\kaishu \myfirstauthor}\\
+    \myfirstaffiliation \\ \myfirstemail}
+}
+
+\newcommand{\mytwoauthors}{\author{{\kaishu \myfirstauthor}\\             
+    \myfirstaffiliation \\ \myfirstemail
+    \and {\kaishu \mysecondauthor} \\ \mysecondaffiliation \\
+    \small \mysecondemail}%
+}
+
+\newcommand{\mythreeauthors}{\author{{\kaishu \myfirstauthor}\\           
+    \myfirstaffiliation \\ \myfirstemail
+    \and {\kaishu \mysecondauthor} \\ \mysecondaffiliation \\
+    \mysecondemail
+    \and {\kaishu \mythirdauthor} \\ \mythirdaffiliation \\
+    \mythirdemail}%
+}
+
+\newcommand{\myfourauthors}{\author{\myfirstauthor\\        		
+ \myfirstaffiliation \\ \myfirstemail
+    \and \mysecondauthor \\ \mysecondaffiliation \\
+    \mysecondemail
+    \and \mythirdauthor \\ \mythirdaffiliation \\
+    \mythirdemail
+    \and \myfourthauthor \\ \myfourthaffiliation \\
+    \myfourthemail}%
+}
+
+\newcommand{\myfiveauthors}{\author{\myfirstauthor\\        		
+ \myfirstaffiliation \\ \myfirstemail
+    \and \mysecondauthor \\ \mysecondaffiliation \\
+    \mysecondemail
+    \and \mythirdauthor \\ \mythirdaffiliation \\
+    \mythirdemail
+    \and \myfourthauthor \\ \myfourthaffiliation \\
+    \myfourthemail
+    \and \myfifthauthor \\ \myfifthaffiliation \\
+    \myfifthemail}%
+}
+
+
+\newcommand{\authors}{%
+    \ifthenelse{\equal{\mysecondauthor}{null}}{\myoneauthors}{
+        \ifthenelse{\equal{\mythirdauthor}{null}}{\mytwoauthors}{
+         \ifthenelse{\equal{\myfourthauthor}{null}}{\mythreeauthors}{
+	 \ifthenelse{\equal{\myfifthauthor}{null}}{\myfourauthors}{%
+     		\myfiveauthors}}
+}
+}
+}
+
+%  Title page header
+\newcommand{\semester}{2025年秋季学期}
+\newcommand{\mylhead}{清华大学计算机系《计算机视觉》课程设计\quad\semester}
+
+% Content page header
+\newcommand{\myfancyhead}{《计算机视觉》课程设计 \hspace{2em} \mytitle \hspace{2em} \myauthors}
+
+%  Title page header & footer command
+\newcommand{\mytitlepage}{%
+    \setcounter{page}{1}
+    \fancypagestyle{plain}{\fancyhf{}
+      \lhead{\zihao{6}\mylhead}
+      \rhead{}
+      \lfoot{}
+      \cfoot{\zihao{-5}\thepage}
+      \rfoot{}
+      \renewcommand{\headrulewidth}{0pt}
+    }
+}
+
+%  Content page header & footer command
+\pagestyle{fancy} \fancyhf{}
+\fancyhead[C]{\zihao{6}\myfancyhead}
+\fancyhead[L]{}
+\fancyhead[R]{} \lfoot{} \cfoot{\zihao{-5}\thepage} \rfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Define title
+\title{\mytitle}
+
+%  Title command
+\newcommand{\printtitlepage}{%
+    \mytitlepage
+    \authors
+    \date{}
+    \maketitle
+    \begin{center}     
+    \begin{minipage}[c]{14cm}
+    \vspace{-4ex}
+      \noindent\textbf{摘\hspace{10.5pt}要：}\zihao{-5}\myabstract 
+      \vspace{1ex} \\
+      \textbf{\zihao{5}关键词：}\zihao{-5}\mykeywords
+    \end{minipage}
+    \end{center}
+}
+
+% Enumerate environment spacing
+\usepackage{enumitem}
+\setenumerate{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setitemize{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+
+%---------------------------------------------------------------%
+%  Bibliography
+\usepackage[firstinits=true,maxcitenames=3,maxbibnames=99,backend = biber, style=caspervector,utf8, sorting=nyt]{biblatex}	
+\renewcommand{\bibfont}{\normalfont\small}			
+\defbibenvironment{bibliography}					
+  {\list
+     {\printfield[labelnumberwidth]{labelnumber}}
+     {\setlength{\labelwidth}{\labelnumberwidth}%
+      \setlength{\leftmargin}{\labelwidth}%
+      \setlength{\labelsep}{\biblabelsep}%
+      \addtolength{\leftmargin}{\labelsep}%
+      \setlength{\itemsep}{0.8mm}%				
+      \setlength{\parsep}{\bibparsep}}%
+      \renewcommand*{\makelabel}[1]{\hss##1}}	
+  {\endlist}
+  {\item}
+
+\DefineBibliographyStrings{english}{%
+bibliography = {参考文献}, % = \bibname				
+references = {参考文献}, % = \refname
+}
+\DeclareFieldFormat{year}{#1}
+
+%  English reference
+\newbibmacro*{publisher+location}{%
+	\iflistundef{publisher}%
+	{}
+	{\iflistundef{location}%
+		{\printlist{publisher}}%
+		{\printlist{location}\addcolon\space\printlist{publisher}}%
+	}
+}
+
+%editor
+\renewbibmacro*{editor}{%
+   \ifboolexpr{
+     test \ifuseeditor
+     and
+     not test {\ifnameundef{editor}}
+   }
+     {%
+	\midsentence%
+	\setunit{\addcomma\space in\addspace}%
+	\printnames{editor}
+	(\usebibmacro{editorstrg})%
+	\setunit{\addspace}%
+	\clearname{editor}%
+     }
+     {}%
+ }
+
+% Define article format
+\DeclareFieldFormat[article,inproceedings,report]{title}{``\MakeSentenceCase{#1}''}	
+\DeclareFieldFormat[article]{pages}{#1}	
+\DeclareFieldFormat*{volume}{\mkbibbold{#1}}
+\DeclareFieldFormat*{number}{\mkbibbold{(#1)}}
+
+\newbibmacro*{volume+number}{%
+	\printfield{volume}%
+	\printfield{number}
+	\addcolon}
+\DeclareBibliographyDriver{article}{%
+	\printnames{author}%
+	\newunit
+	\printfield{year}%
+	\newunit
+	\printfield{title}%
+	\newunit
+	\printfield{journaltitle}%
+	\newunit
+	\usebibmacro{volume+number}%
+	\newunit
+	\printfield{pages}%
+	\newunit%
+	\printfield{note}%
+	\finentry}
+
+% Define book format
+\DeclareBibliographyDriver{book}{% 					
+	\printnames{author}%
+	\newunit
+	\printfield{year}%
+	\newunit
+	\printfield{title}%
+	\newunit
+	\usebibmacro{publisher+location}%
+	\newunit%
+	\printfield{note}%
+	\finentry}
+
+\DeclareFieldFormat[inproceedings,incollection]{pages}{pp. #1}
+
+% Define inproceedings format
+\DeclareBibliographyDriver{inproceedings}{% 					
+	\printnames{author}%
+	\newunit
+	\printfield{year}%
+	\newunit
+	\printfield{title}%
+	\newunit
+	\usebibmacro{editor}%
+	\newunit
+	\printfield{booktitle}%
+	\newunit
+	\printfield{volume}%
+	\printfield{number}%
+	\newunit
+	\printfield{pages}%
+	\newunit
+	\usebibmacro{publisher+location}%
+	\newunit%
+	\printfield{note}%
+	\finentry}
+
+% Define incollection format
+\DeclareBibliographyDriver{incollection}{% 					
+	\printnames{author}%
+	\newunit
+	\printfield{year}%
+	\newunit
+	\printfield{title}%
+	\newunit
+	\usebibmacro{editor}%
+	\newunit
+	\printfield{booktitle}%
+	\newunit
+	\printfield{volume}%
+	\printfield{number}%
+	\newunit
+	\printfield{pages}%
+	\newunit
+	\usebibmacro{publisher+location}%
+	\newunit%
+	\printfield{note}%
+	\finentry}
+\DeclareFieldFormat[thesis]{title}{\it{#1}}	
+
+% Define thesis format
+\DeclareBibliographyDriver{thesis}{%
+	\printnames{author}%
+	\newunit%
+	\printfield{year}%
+	\newunit%
+	\printfield{title}%
+	\newunit%
+	\printfield{type}%
+	\newunit%
+	\printlist{institution}%
+	\newunit%
+	\printfield{url}%
+	\newunit%
+	\printfield{note}%
+	\finentry%
+}
+
+\DeclareFieldFormat[thesis,report]{type}{#1}	
+
+\DeclareBibliographyDriver{report}{%
+	\printnames{author}%
+	\newunit%
+	\printfield{year}%
+	\newunit%
+	\printfield{title}%
+	\newunit%
+	\printfield{type}%
+	\newunit%
+	\printfield{note}%
+	\newunit%
+	\printlist{institution}%
+	\finentry%
+}
+
+\DeclareBibliographyDriver{unpublished}{%
+	\printnames{author}%
+	\newunit
+	\printfield{year}%
+	\newunit
+	\printfield{title}%
+	\newunit
+	\printfield{note}%
+	\finentry%
+}
+
+%  Chinese-English mixture
+\providecommand{\cegen}[2]{%
+	\ifthenelse%
+	{\iffieldequalstr{userf}{zh} \or \iffieldequalstr{userf}{cn}}%
+	{#1}{#2}%
+}								
+\providecommand{\cncomma}{，}							
+\providecommand{\cecomma}{\cegen{\cncomma}{\addcomma\space}}	
+\renewcommand{\newunitpunct}{\cecomma}		
+
+\providecommand{\cnperiod}{。}							
+\providecommand{\ceperiod}{\cegen{\cnperiod}{\addperiod\space}}	
+\renewcommand{\finentrypunct}{\ceperiod}	
+
+\providecommand{\cncolon}{：}
+
+\providecommand{\cespace}{\cegen{}{\addspace}}
+\renewcommand{\multinamedelim}{\cecomma}
+\renewcommand{\finalnamedelim}{\cegen{\cncomma}{\addspace\bibstring{and}\space}}	\renewcommand{\andothersdelim}{\cespace}
+\renewcommand{\postnotedelim}{\cecomma}
+\renewcommand{\bibendnotewrapper}[1]{\bibsentence #1。}
+\renewcommand{\bibfootnotewrapper}[1]{\bibsentence #1。}
+
+% Chinese reference
+% Define Chinese article format
+\DeclareFieldFormat[misc]{title}{{“#1”}}				
+\DeclareFieldFormat[misc]{year}{{#1}年}			
+\DeclareFieldFormat[misc]{volume}{第{#1}卷}		
+\DeclareFieldFormat[misc]{number}{第{#1}期}		
+\DeclareFieldFormat[misc]{pages}{第#1页}	 
+
+\newbibmacro*{cn_volume+number}{%
+	\printfield{volume}%
+	\printfield{number}\setunit{\cncomma}}
+
+\newbibmacro*{cn_publisher+location}{%
+	\iflistundef{publisher}%
+	{}
+	{\iflistundef{location}%
+		{\printlist{publisher}}%
+		{\printlist{location}\cncolon\printlist{publisher}}%
+	}
+}
+
+\DeclareBibliographyDriver{misc}{%				
+	\printnames{author}\setunit{\cncomma}%
+	\printfield{title}\setunit*{\cncomma}%
+	\printfield{journaltitle}\setunit*{\cncomma}%
+	\setunit{\cncomma}%
+	\printfield{year}%
+	\usebibmacro{cn_volume+number}%
+	\setunit{\cncomma}%
+	\usebibmacro{cn_publisher+location}%
+	\setunit{\cncomma}%
+	\printfield{pages}%
+	\setunit{\cncomma}%
+	\printfield{url}%
+     \setunit{\cncomma}%
+	\printfield{note}%
+	\finentry%
+}
