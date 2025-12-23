@@ -1,4 +1,4 @@
-PWD /Users/zhaoyue/Documents/Courses/25秋/计算机视觉/2025秋计算机视觉课程设计/课程设计Latex模版
+PWD /Users/zhaoyue/Documents/Courses/25秋/计算机视觉/2025秋计算机视觉课程设计/CV-class-project/课程设计Latex模版
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt
@@ -223,6 +223,9 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/base/atveryend-ltx.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+INPUT ./CVClassSample.aux
+INPUT ./CVClassSample.aux
+INPUT CVClassSample.aux
 OUTPUT CVClassSample.aux
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 OUTPUT CVClassSample.bcf
@@ -231,6 +234,12 @@ INPUT ./CVClassSample.bbl
 INPUT ./CVClassSample.bbl
 INPUT ./CVClassSample.bbl
 INPUT CVClassSample.bbl
+INPUT ./CVClassSample.out
+INPUT ./CVClassSample.out
+INPUT CVClassSample.out
+INPUT CVClassSample.out
+INPUT ./CVClassSample.out
+INPUT ./CVClassSample.out
 OUTPUT CVClassSample.out
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
@@ -271,9 +280,9 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
-INPUT ./fig/method.png
-INPUT ./fig/method.png
-INPUT ./fig/method.png
+INPUT ./fig/Presentation1_cropped.pdf
+INPUT ./fig/Presentation1_cropped.pdf
+INPUT ./fig/Presentation1_cropped.pdf
 OUTPUT CVClassSample.xdv
 INPUT ./fig/qwen2.5vl_arc.jpeg
 INPUT ./fig/qwen2.5vl_arc.jpeg
@@ -296,4 +305,5 @@ INPUT ./fig/ours_train_loss.png
 INPUT CVClassSample.aux
 INPUT ./CVClassSample.out
 INPUT ./CVClassSample.out
+INPUT CVClassSample.run.xml
 OUTPUT CVClassSample.run.xml
