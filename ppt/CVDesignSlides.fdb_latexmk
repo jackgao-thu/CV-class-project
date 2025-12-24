@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1766575113.01109 "CVDesignSlides.xdv" "CVDesignSlides.pdf" "CVDesignSlides" 1766575114.14949 0
-  "CVDesignSlides.xdv" 1766575112.92975 55652 54423ffdc3d4f6d38bbe3e8713e02495 "xelatex"
+["xdvipdfmx"] 1766577055.46794 "CVDesignSlides.xdv" "CVDesignSlides.pdf" "CVDesignSlides" 1766577056.66667 0
+  "CVDesignSlides.xdv" 1766577055.38421 55688 2b93c8ad9bfb8600ad174fa16b77c93c "xelatex"
   (generated)
   "CVDesignSlides.pdf"
   (rewritten before read)
-["xelatex"] 1766575111.37589 "CVDesignSlides.tex" "CVDesignSlides.xdv" "CVDesignSlides" 1766575114.14658 0
+["xelatex"] 1766577053.71257 "CVDesignSlides.tex" "CVDesignSlides.xdv" "CVDesignSlides" 1766577056.66371 0
   "../计算机视觉课程大作业修改版/fig/chest_example_1.png" 1766567699.06329 137928 c09e1a244f0b91741fc0ad7ca5a90b5d ""
   "../计算机视觉课程大作业修改版/fig/chest_example_2.png" 1766567699.0643 137856 7ac64bb2d8663b9409fe9b3fa4b6ed2e ""
   "../计算机视觉课程大作业修改版/fig/compare.pdf" 1766567699.06697 106756 665408737c756d18781489f02cacdbe9 ""
@@ -219,10 +219,10 @@
   "/usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf" 1739380943 42148 61becc7c670cd061bb319c643c27fdd4 ""
   "/usr/local/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1744717957 5639815 12c37584e3b7212a07640d2d2fa1d28a ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "CVDesignSlides.aux" 1766575112.92827 2714 19755f1c4abe7091002805448b1c7dbf "xelatex"
-  "CVDesignSlides.nav" 1766575112.92966 1481 4dff29d63ced408af8d13a7957e2a731 "xelatex"
-  "CVDesignSlides.out" 1766575112.59992 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
-  "CVDesignSlides.tex" 1766575111.23048 5401 fbec32d99968dade0c225df3361bf9c1 ""
+  "CVDesignSlides.aux" 1766577055.383 2714 19755f1c4abe7091002805448b1c7dbf "xelatex"
+  "CVDesignSlides.nav" 1766577055.38414 1481 4dff29d63ced408af8d13a7957e2a731 "xelatex"
+  "CVDesignSlides.out" 1766577055.04449 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
+  "CVDesignSlides.tex" 1766577053.50973 5407 e977ffbacdd60b4fde17e8438fa47ce0 ""
   (generated)
   "CVDesignSlides.aux"
   "CVDesignSlides.log"
