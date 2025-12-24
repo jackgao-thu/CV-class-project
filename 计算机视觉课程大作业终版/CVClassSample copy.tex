@@ -1,0 +1,229 @@
+%!TEX encoding = UTF-8 Unicode
+
+%---------------------------------------------------------------%
+%  使用XeLaTex编译
+%  参考文献的排版，请创建 .bib 文件， 并使用 BibTex 或者 Biber(有中文参考文献时) 进行排版。
+%---------------------------------------------------------------%
+
+%===============================================================%
+%  固定模板，请不要修改这一部分
+
+\documentclass[a4paper,11pt,onecolumn,UTF8]{article}
+\usepackage{CVClassTemplate}                                  
+\setmainfont{Times New Roman}                      
+
+\newcommand{\mysecondauthor}{null}
+\newcommand{\mythirdauthor}{null} 
+\newcommand{\myfourthauthor}{null}
+\newcommand{\myfifthauthor}{null}
+%===============================================================%
+
+
+%===============================================================%
+% ** 请从这里开始你的编辑 **
+
+%---------------------------------------------------------------%
+%  基本信息配置
+%---------------------------------------------------------------%
+\newcommand{\mytitle}          % 请输入论文题目
+{2025年秋季学期《计算机视觉》课程设计}
+
+\newcommand{\myfirstauthor}        % 请输入作者姓名
+{\kaishu 兴军亮教师课程团队}
+
+\newcommand{\myfirstaffiliation}   % 请输入作者单位
+{\small 清华大学计算机系}
+
+\newcommand{\myfirstemail}         % 请输入作者电子邮箱
+{\small jlxing@tsinghua.edu.cn}
+
+%\renewcommand{\mysecondauthor}{\kaishu 第二作者}    % 若有两名作者取消该行注释
+\newcommand{\mysecondaffiliation}{\small 单位2}
+\newcommand{\mysecondemail}{\small xxxx@xxxx.xxx}
+
+%\renewcommand{\mythirdauthor}{\kaishu 第三作者}    % 若有三名作者取消该行注释
+\newcommand{\mythirdaffiliation}{\small 单位3}
+\newcommand{\mythirdemail}{\small xxxx@xxxx.xxx}
+
+%---------------------------------------------------------------%
+%  摘要 & 关键词
+%---------------------------------------------------------------%
+\newcommand{\myabstract}       % 请在下面输入中文摘要
+{
+    课程设计是《计算机视觉》课程的重要教学和考核环节，为同学们提供了综合运用课上所学的知识，解决感兴趣的计算机视觉问题的机会。课程设计可以从给定的方向中选择课题，也可以自行设计题目。项目应当解决一个科学问题，而非简单的综述或者不加修改地复现已有论文。最终每位同学需要提交一篇符合学术规范的中文论文、一个用于展示的幻灯片、以及代码等附加材料，并在课堂上进行5分钟的现场汇报。
+}
+
+\newcommand{\mykeywords}        % 请在下面输入中文关键词，以中文分号分隔
+{
+    计算机视觉；课程设计；学术论文
+}
+
+%---------------------------------------------------------------%
+%  预置宏包和自定义命令(你可以补充需要的宏包和自定义命令)
+%---------------------------------------------------------------%
+\usepackage[pdfborder=0,CJKbookmarks=true]{hyperref}  % 使用内部超链接，其中第二个选项用于支持中文书签
+\hypersetup{
+    hidelinks=true,
+}
+%改变颜色
+
+\addbibresource{example.bib}				% 填入参考文献库文件.bib
+
+%===============================================================%
+%  打印标题页信息，请不要修改这一部分
+\begin{document}
+\printtitlepage
+%===============================================================%
+
+%---------------------------------------------------------------%
+%  正文内容从这里开始
+%---------------------------------------------------------------%
+\section{概述}
+本学期《计算机视觉》课程设计为\textbf{单人独立}或者\textbf{双人合作}完成的项目研究，请自行选择独自或者两人组队完成课程设计。你(们)需要综合运用知识来解决或探索一个感兴趣的计算机视觉问题。项目可以从给定的方向中选取，也可以进行自行设计。但请注意项目需要有足够的探索性和创新性，即不能只是简单的文献综述或者复现前人的工作。
+
+最终，你(们)需要提交一篇按照学术论文要求撰写的\textbf{中文报告}，一篇用于展示的\textbf{幻灯片文件}(可以是ppt或者pdf格式)，并附带源代码、demo等必要资料。以上所有材料形成一个压缩文件，以\textbf{【姓名1-学号1-姓名2-学号2.zip】}(组队完成)或\textbf{【姓名-学号.zip】}(单人完成)命名，压缩文件解压后包含为3个文件夹：\textbf{01-中文报告}、\textbf{02-幻灯片文件}、\textbf{03-源码和Demo}，材料提交的截止时间为\textbf{【2025年12月24日23:59】}。
+
+其中，报告长度\textbf{不少于6页，不多于10页}(不包含参考文献部分)，如果是双人合作，报告中需注明\textbf{两人的分工情况}；项目源码文件中需要\textbf{包括 ``.git'' 文件夹}，包含你(们)通过Git协作的提交记录；文章应使用\textbf{课程提供的模板}进行LaTeX排版。需要包含：
+\begin{itemize}
+    \item \textbf{摘要：} 提供论文的精简总结，能够强调出研究的意义、发现和创新点。
+    \item \textbf{引言：} 解释研究的动机、意义、目标，概述采用的方法和得到的结果。
+    \item \textbf{相关工作：} 简要总结前人的工作，阐释项目与此的联系或者与已有工作有何区别。
+    \item \textbf{方法：} 描述你解决问题使用的方法。通常包含使用的数据集、预处理或后处理操作、模型的结构等，还可能包括概念的定义、理论推导或证明等。
+    \item \textbf{实验：} 描述实验的设计、评估指标的选取以及实验中的主要发现。请注意阐释实验数据如何与结论相关。这部分还可能包括消融实验以及后续讨论等。
+    \item \textbf{总结与未来展望：} 总结文章的发现，讨论文章的局限性、提出后续研究的开放性问题。
+    \item \textbf{参考文献：} 按照规范列出论文参考的工作。
+\end{itemize}
+
+请勿使用\textbf{已发表}、\textbf{已投稿}、\textbf{已完成大部分内容的论文}、或\textbf{其他课程的大作业}作为本课程的课程设计。在第16周的课堂上(2025年12月31日)，每组同学将进行5分钟左右(根据总人数调整)的课程设计现场展示。现场展示应当包含项目研究的问题、动机、主要方法贡献以及实验结果。实验结果建议用图表或者样例等直观的方式呈现。
+
+\section{参考方向和选题}
+本章节给出了六个计算机视觉领域的方向，以供参考和选择。你也可以自行设计项目的主题，但请与计算机视觉领域相关，且具备一定的创新性。
+
+\subsection{图像分割 Image Segmentation}
+图像分割将图像中的每个像素点打上一个标签，形成一张像素级别的分割图。相比图像级别的识别或者目标检测，图像分割是一个更加细粒度的问题。
+
+一个常用的图像分割数据集为ADE20K~\parencite{zhou2019semantic}，其包含了2万余张精心标注的自然场景图片，共有3169个类别。有很多工作在这个数据集上开展，从最初的Fully Convolutional Neural Networks (FCN)~\parencite{long2015fully}、RefineNet~\parencite{lin2017refinenet}到后续基于最新非常流行的Transformer结构的BEiT~\parencite{bao2021beit}和ViT-Adapter~\parencite{chen2022vision}等模型。
+
+超越这些模型的表现自然是很有突破性的研究工作。也可以不仅仅着眼于此，你可以研究更多探索性的问题，从中提出新的模型(例如实例分割、语义分割、对分割边缘的优化、模型压缩、不同粒度的分割等)。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig/ade2k.pdf}
+    \caption{ADE2K~\parencite{zhou2019semantic}数据集中的图片及标注案例}
+	\label{fig:ade2k}
+\end{figure} 
+
+\subsection{超分辨率 Super Resolution}
+超分辨率指以低分辨率图片为输入，生成更高分辨率的图片。这其实是一个模糊定义的问题，因为一张低分辨率图片可能对应多张可能的高分辨率图片。尽管如此，一个训练良好的网络能够具有足够的视觉信息分析能力，使其能够处理任意的低分辨率照片。
+
+简单的用CNN解决这一任务就是一种方法，这也是经典论文SRCNN~\parencite{dong2015image}及其后续工作FSRCNN~\parencite{dong2016accelerating}的思想。而作为一种意义上的图像生成问题，使用生成对抗网络自然也是一种合理的技术路线，这就是SRGAN~\parencite{ledig2017photo}的成果。
+
+在这些经典工作之上，还有什么其他的网络结构可能完成单图超分辨率的任务呢？这其中有很大的空间来探索和尝试。
+
+通常而言，超分辨率的模型不需要大量的数据来训练，因此你可以使用计算机视觉领域的很多数据集，比如ImageNet或者COCO；或者也可以采用FSRCNN的100张图片的数据集(\url{http://mmlab.ie.cuhk.edu.hk/projects/FSRCNN.html}
+)。测试时可以考虑采用Set5或者Set14数据集(\url{https://github.com/jbhuang0604/SelfExSR/tree/master/data})。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig/sr.pdf}
+    \caption{SRGAN论文~\parencite{ledig2017photo}中几种超分辨率算法的对比}
+	\label{fig:sr}
+\end{figure}
+
+如果你想尝试更加有挑战性的题目，可以试试视频的超分辨率。对视频的每一帧使用超分辨率算法很可能无法获得一个流畅的视频。不妨试试添加一些时序平滑的技巧，或者调整一下损失函数的形式，来提升高分辨率视频的整体质量。
+
+\subsection{图像描述 Image Captioning}
+图像描述是用文本来解释图像内容的任务，是计算机视觉与自然语言处理的交叉领域。2015年的Show and Tell~\parencite{vinyals2015show}被普遍认为是图像描述进入深度学习时代的经典之作，用CNN与LSTM结合的结构生成文本。此后，采用注意力机制~\parencite{xu2015show}、目标检测的机制~\parencite{anderson2018bottom}、Transformer的结构~\parencite{huang2019attention}、以及基于强化学习的方法~\parencite{liu2017improved}都曾被应用于这一领域。
+
+当然，如今有一些具备强大多模态能力的大模型能够较好地完成图生文的问题。不过在此基础上，如何加强图片与描述之间的关联，如何增加文本描述的细致性，甚至进行文章扩写，都是具备探索价值的问题。
+
+这一领域常用的数据集为COCO Caption~\parencite{chen2015microsoft}，你也可以选择其他数据集来进行评估和验证。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig/captioning.pdf}
+    \caption{RDN论文~\parencite{ke2019reflective}中图像描述的示意图}
+	\label{fig:captioning}
+\end{figure} 
+
+\subsection{图像风格迁移 Image Style Transfer}
+图像风格迁移旨在将一张图片的风格或艺术画风迁移至另一目标图片上。图像风格迁移比较有影响力的工作包括：Gatys\parencite{gatys2016image}、 AdaIN~\parencite{huang2017arbitrary}、WCT~\parencite{li2017universal}、Linear~\parencite{li2019learning}、AAMS~\parencite{yao2019attention}、MCCNet~\parencite{deng2021arbitrary}和AdaAttN~\parencite{liu2021adaattn}等。
+
+作为计算机视觉的经典任务，图像风格迁移的相关技术影响逐步扩展至其他视觉及非视觉领域，例如AdaIN~\parencite{huang2017arbitrary}的风格对齐方法对条件图像生成、语音合成领域产生了较大影响。
+
+同时，图像风格迁移的发展也催生了视频风格迁移任务，尤其在短视频滤镜的应用中展现出了较大的应用潜力。这一技术能够实时将艺术风格融入视频内容，为用户提供个性化的创作工具，进一步推动了短视频平台的内容多样性和用户体验的提升。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\linewidth]{fig/style-transfer.pdf}
+    \caption{Gatys论文~\parencite{gatys2016image}中进行艺术图像风格迁移例子}
+	\label{fig:styletransfer}
+\end{figure} 
+
+\subsection{图像生成 Image Generation}
+图像生成或图像合成是基于已有数据集来生成新图片的过程。图像生成模型中比较有影响力的有VAE~\parencite{kingma2013auto}、GLOW~\parencite{kingma2018glow}、GAN~\parencite{goodfellow2020generative}等，其中又以GAN最受欢迎，衍生出DCGAN~\parencite{radford2015unsupervised}、CGAN~\parencite{mirza2014conditional}、StackGAN~\parencite{zhang2017stackgan}等变体。
+
+图像生成的子问题也非常丰富，包括传统的图像生成、文生图、图生图(风格迁移)等。你可以尝试基于GAN的框架做出新的结构，或者在新的子问题上尝试算法的效果，都具有着一定的探索空间。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\linewidth]{fig/controlnet.pdf}
+    \caption{ControlNet论文~\parencite{zhang2023adding}中可控图像生成的例子}
+	\label{fig:controlnet}
+\end{figure} 
+
+近年来，扩散模型(Diffusion Models)成为图像生成的新热点，尤其是Stable Diffusion~\parencite{rombach2022high}在学术上和商业上已经有了不少的应用。如果你拥有足够的算力资源以及挑战的信心，可以尝试基于Stable Diffusion进行新的探索(例如训练一个ControlNet~\parencite{zhang2023adding}，或者在某一个领域里做Finetune等)。
+
+\subsection{三维重建 3DGS}
+近年来，3DGS技术~\parencite{kerbl20233d}在三维重建等领域取得广泛应用。3DGS的核心是一种光栅化技术，使用了大量高斯函数而不是传统的三角形来表示场景。这些高斯函数包括位置、变形、颜色等参数。3DGS还使用了结构运动算法从图像中恢复点云，然后将点云转换为高斯函数。然后,利用可微分高斯光栅化,通过类似神经网络的随机梯度下降进行训练,优化高斯函数的参数。最终,经过训练的高斯函数可用于实时快速光栅化生成场景。
+
+你可以考虑从3DGS以下方向进行尝试优化：（1）物体内部结构的三维建模：尽管3D GS能够产生高度逼真的效果图，但在当前的GS框架内对物体的内部结构建模是一个显着的挑战。（2）3D大规模场景重建：直接使用3D GS进行大规模场景重建是不切实际的，因为呈现如此多的高斯函数会带来大量的计算负载。（3）物理和语义感知的场景表示：有可能通过设计物理和语义感知的3D GS系统，为场景重建和理解的同步进步铺平道路。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\linewidth]{fig/3DGS.pdf}
+    \caption{3DGS论文~\parencite{zhang2023adding}中与baseline方法的效果图对比。}
+	\label{fig:nerf}
+\end{figure} 
+
+\section{自行选择题目}
+除了以上方向，你也可以自行选取感兴趣的与计算机视觉相关的领域，并围绕此开展你的项目。一个可行的选题可能关注于新应用或新模型：
+\begin{itemize}
+    \item \textbf{新应用：} 你可以将计算机视觉的算法或技术用于你感兴趣或擅长的其他具体领域，从而扩展计算机视觉技术的适用性。
+    \item \textbf{新模型：} 你可以提出全新的模型框架，或者提升已有的模型方法，在特定的数据集上对二者进行评估，并分析它们各自的优势和弱点。
+\end{itemize}
+
+在选题过程中，请确保所选项目与计算机视觉及课程大纲相符，确保项目的原创性与独立性，同时积极探索具有创新性和挑战性的课题，充分展现你本学期的学习成果与研究能力！
+
+\section{评分标准}
+课程设计占课程总评分数的40\%，课程设计部分的具体评分细则如下(以百分制表示)：
+\begin{itemize}
+    \item \textbf{选题与创新性(10\%)：} 主题是否超越了对已有工作的复现，提出了新的想法或尝试？这可能包括对模型的新的分析、新的模型结构或者新的应用场景等。
+    \item \textbf{摘要(5\%)：} 摘要是否提供了项目的精简描述并强调了文章的亮点和创新点？
+    \item \textbf{动机与相关工作(10\%)：} 研究的问题是否被正确定义？研究的问题是否有价值？与前人工作的关系或者区别是什么？项目的目标是否明确？
+    \item \textbf{方法(15\%)：} 文章希望证明的假设是否明确？数据集、模型结构和数据处理的过程是否阐述清晰？指标设定是否定义合理？
+    \item \textbf{实验结果及讨论(10\%)：} 实验中的主要结果和发现是否解释得清晰？实验是否与文章结论相关联？
+    \item \textbf{结论和未来工作(10\%)：} 是否在结尾总结了文章的要点？是否对项目的局限性进行了讨论分析？是否提出了后续研究有价值的开放性问题？
+    \item \textbf{参考文献(5\%)：} 参考文献是否引用充分？格式是否统一？
+    \item \textbf{写作清晰度(5\%)：} 论文写作是否清晰、简洁、全面、易于理解？
+    \item \textbf{可复现性(10\%)：} 论文是否为复现提供了充分的信息和描述？是否包含了代码等辅助复现的材料？
+    \item \textbf{现场展示(20\%)：} 幻灯片是否清晰直观？现场展示是否简洁易懂？
+\end{itemize}
+
+\section{温馨提示}
+\begin{enumerate}
+    \item 在\url{https://paperswithcode.com/area/computer-vision}网站中，你可以找到各个方向的数据集、评测标准以及经典的论文。这对于你确定选题以及寻找相关的资源有所帮助。
+    \item 一个合适的问题域是很重要的，例如“解决图像描述的方法”可能过于宽泛了，而“使用4090显卡加速NeRF的训练”又太过于狭窄了。
+    \item 从已有的经典工作或者开源代码起步是一个好的方法，能够最大程度保障项目的可行性。但请不要使用对开源社区的工作进行简单代码复现作为课程设计。
+    \item 如果你觉得你的选题和想法非常有价值，不妨尝试打磨一下投稿到AI领域的会议上！
+    \item 对于任何关于课程设计的问题，欢迎与老师和助教进行讨论。
+\end{enumerate}
+
+%---------------------------------------------------------------%
+%  参考文献
+%---------------------------------------------------------------%
+\printbibliography
+
+%===============================================================%
+
+\end{document}
