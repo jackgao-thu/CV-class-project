@@ -2393,12 +2393,19 @@
     <bcf:citekey order="2" intorder="2">johnson2019mimic</bcf:citekey>
     <bcf:citekey order="3" intorder="1">anderson2018bottom</bcf:citekey>
     <bcf:citekey order="3" intorder="2">huang2019attention</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">irvin2019chexpert</bcf:citekey>
-    <bcf:citekey order="4" intorder="2">johnson2019mimic</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">jing2018automatic</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">li2022blip</bcf:citekey>
-    <bcf:citekey order="6" intorder="2">alayrac2022flamingo</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">bao2021beit</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">radford2021learning</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">li2022blip</bcf:citekey>
+    <bcf:citekey order="5" intorder="2">alayrac2022flamingo</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">tu2024towards</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">li2024llava</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">irvin2019chexpert</bcf:citekey>
+    <bcf:citekey order="8" intorder="2">johnson2019mimic</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">wang2022multi</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">tanida2023region</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">jing2018automatic</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">liu2021swin</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">hamamci2025developinggeneralistfoundationmodels</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">hamamci2025developinggeneralistfoundationmodels</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

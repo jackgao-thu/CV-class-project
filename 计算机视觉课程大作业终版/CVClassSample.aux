@@ -1,0 +1,116 @@
+\relax 
+\abx@aux@refcontext{nyt/global//global/global/global}
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\abx@aux@cite{0}{vinyals2015show}
+\abx@aux@segm{0}{0}{vinyals2015show}
+\abx@aux@cite{0}{xu2015show}
+\abx@aux@segm{0}{0}{xu2015show}
+\abx@aux@cite{0}{irvin2019chexpert}
+\abx@aux@segm{0}{0}{irvin2019chexpert}
+\abx@aux@cite{0}{johnson2019mimic}
+\abx@aux@segm{0}{0}{johnson2019mimic}
+\HyPL@Entry{0<</S/D>>}
+\@writefile{toc}{\contentsline {section}{\numberline {1}引言}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}问题定义与核心难点}{1}{section.2}\protected@file@percent }
+\abx@aux@cite{0}{anderson2018bottom}
+\abx@aux@segm{0}{0}{anderson2018bottom}
+\abx@aux@cite{0}{huang2019attention}
+\abx@aux@segm{0}{0}{huang2019attention}
+\abx@aux@cite{0}{radford2021learning}
+\abx@aux@segm{0}{0}{radford2021learning}
+\abx@aux@cite{0}{li2022blip}
+\abx@aux@segm{0}{0}{li2022blip}
+\abx@aux@cite{0}{alayrac2022flamingo}
+\abx@aux@segm{0}{0}{alayrac2022flamingo}
+\abx@aux@cite{0}{tu2024towards}
+\abx@aux@segm{0}{0}{tu2024towards}
+\abx@aux@cite{0}{li2024llava}
+\abx@aux@segm{0}{0}{li2024llava}
+\abx@aux@cite{0}{irvin2019chexpert}
+\abx@aux@segm{0}{0}{irvin2019chexpert}
+\abx@aux@cite{0}{johnson2019mimic}
+\abx@aux@segm{0}{0}{johnson2019mimic}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces 方法整体框架：左侧为 CT 体积重采样与切片选择，中间为 qwen2.5-VL 对话模板与视觉 token 组装，右侧展示可选的高斯噪声或异类病例负样本与 $\alpha ,\beta $ 组合损失。 }}{2}{figure.1}\protected@file@percent }
+\newlabel{fig:framework}{{1}{2}{方法整体框架：左侧为 CT 体积重采样与切片选择，中间为 qwen2.5-VL 对话模板与视觉 token 组装，右侧展示可选的高斯噪声或异类病例负样本与 $\alpha ,\beta $ 组合损失。}{figure.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}相关工作}{2}{section.3}\protected@file@percent }
+\newlabel{sec:related_work}{{3}{2}{相关工作}{section.3}{}}
+\abx@aux@cite{0}{wang2022multi}
+\abx@aux@segm{0}{0}{wang2022multi}
+\abx@aux@cite{0}{tanida2023region}
+\abx@aux@segm{0}{0}{tanida2023region}
+\abx@aux@cite{0}{jing2018automatic}
+\abx@aux@segm{0}{0}{jing2018automatic}
+\abx@aux@cite{0}{liu2021swin}
+\abx@aux@segm{0}{0}{liu2021swin}
+\abx@aux@cite{0}{hamamci2025developinggeneralistfoundationmodels}
+\abx@aux@segm{0}{0}{hamamci2025developinggeneralistfoundationmodels}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}多模态大模型与医疗应用}{3}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}对比学习与负向约束}{3}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}三维医学影像建模}{3}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}研究动机}{3}{section.4}\protected@file@percent }
+\newlabel{sec:motivation}{{4}{3}{研究动机}{section.4}{}}
+\abx@aux@cite{0}{hamamci2025developinggeneralistfoundationmodels}
+\abx@aux@segm{0}{0}{hamamci2025developinggeneralistfoundationmodels}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces CT-Rate数据集对比示例：图中为测试集中两份胸部CT图像以及报告描述。两份样本的CT图像存在较大差异，然而由于固定且较为冗余的报告输出模式，模型会输出大量文本完全相同或含义完全相同的报告内容（主要为未出现的病灶）。这降低了模型拟合文本部分报告的难度，促使模型过拟合文本部分，而忽视图像部分的关键病灶信息。 }}{4}{figure.2}\protected@file@percent }
+\newlabel{fig:compare}{{2}{4}{CT-Rate数据集对比示例：图中为测试集中两份胸部CT图像以及报告描述。两份样本的CT图像存在较大差异，然而由于固定且较为冗余的报告输出模式，模型会输出大量文本完全相同或含义完全相同的报告内容（主要为未出现的病灶）。这降低了模型拟合文本部分报告的难度，促使模型过拟合文本部分，而忽视图像部分的关键病灶信息。}{figure.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}模型预备：qwen2.5-VL 概要}{4}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}数据集与预处理细节}{4}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}CT-Rate 数据集概况}{4}{subsection.6.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces qwen2.5-VL 多模态架构示意。 包含原生动态分辨率 ViT、MRoPE 时间对齐与视觉-语言压缩模块，是本文方法的基座。 }}{5}{figure.3}\protected@file@percent }
+\newlabel{fig:qwen25vl}{{3}{5}{qwen2.5-VL 多模态架构示意。 包含原生动态分辨率 ViT、MRoPE 时间对齐与视觉-语言压缩模块，是本文方法的基座。}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}影像标准化流程}{5}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}数据封装与存储架构}{6}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}方法}{6}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}高斯噪声构造}{6}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}负向图像构造}{6}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}损失与训练策略}{6}{subsection.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}评估协议}{7}{subsection.7.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}实验与结果分析}{7}{section.8}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces 不同设置下的模型性能对比（测试集）}}{7}{table.1}\protected@file@percent }
+\newlabel{tab:main}{{1}{7}{不同设置下的模型性能对比（测试集）}{table.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces $\beta $ 对性能的影响（Ours-Gauss）}}{8}{table.2}\protected@file@percent }
+\newlabel{tab:ablation}{{2}{8}{$\beta $ 对性能的影响（Ours-Gauss）}{table.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 示例胸片（输入影像投影）用于定性分析。 每幅为同分辨率胸部影像切片/投影，展示数据外观与对比度范围。 }}{8}{figure.4}\protected@file@percent }
+\newlabel{fig:cxr_examples}{{4}{8}{示例胸片（输入影像投影）用于定性分析。 每幅为同分辨率胸部影像切片/投影，展示数据外观与对比度范围。}{figure.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}讨论}{9}{section.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}扩展实验与复现实践}{9}{section.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {11}结论与未来工作}{9}{section.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.1}结论}{9}{subsection.11.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces 训练损失曲线（典型实验）。 横轴为 step，纵轴为 train/loss，展示全程收敛趋势。 }}{10}{figure.5}\protected@file@percent }
+\newlabel{fig:loss}{{5}{10}{训练损失曲线（典型实验）。 横轴为 step，纵轴为 train/loss，展示全程收敛趋势。}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.2}未来工作}{10}{subsection.11.2}\protected@file@percent }
+\abx@aux@number{19}{alayrac2022flamingo}{0}{nyt/global//global/global/global}{1}
+\abx@aux@number{20}{anderson2018bottom}{0}{nyt/global//global/global/global}{2}
+\abx@aux@number{21}{hamamci2025developinggeneralistfoundationmodels}{0}{nyt/global//global/global/global}{3}
+\abx@aux@number{22}{huang2019attention}{0}{nyt/global//global/global/global}{4}
+\abx@aux@number{23}{irvin2019chexpert}{0}{nyt/global//global/global/global}{5}
+\abx@aux@number{24}{jing2018automatic}{0}{nyt/global//global/global/global}{6}
+\abx@aux@number{25}{johnson2019mimic}{0}{nyt/global//global/global/global}{7}
+\abx@aux@number{26}{li2024llava}{0}{nyt/global//global/global/global}{8}
+\abx@aux@number{27}{li2022blip}{0}{nyt/global//global/global/global}{9}
+\abx@aux@number{28}{liu2021swin}{0}{nyt/global//global/global/global}{10}
+\abx@aux@number{29}{radford2021learning}{0}{nyt/global//global/global/global}{11}
+\abx@aux@number{30}{tanida2023region}{0}{nyt/global//global/global/global}{12}
+\abx@aux@number{31}{tu2024towards}{0}{nyt/global//global/global/global}{13}
+\abx@aux@number{32}{vinyals2015show}{0}{nyt/global//global/global/global}{14}
+\abx@aux@number{33}{wang2022multi}{0}{nyt/global//global/global/global}{15}
+\abx@aux@number{34}{xu2015show}{0}{nyt/global//global/global/global}{16}
+\abx@aux@read@bbl@mdfivesum{0C05D5854539BA6A725903FDEC2AB650}
+\abx@aux@defaultrefcontext{0}{alayrac2022flamingo}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{anderson2018bottom}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{hamamci2025developinggeneralistfoundationmodels}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{huang2019attention}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{irvin2019chexpert}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{jing2018automatic}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{johnson2019mimic}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{li2024llava}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{li2022blip}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{liu2021swin}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{radford2021learning}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{tanida2023region}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{tu2024towards}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{vinyals2015show}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{wang2022multi}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{xu2015show}{nyt/global//global/global/global}
+\gdef \@abspage@last{12}
