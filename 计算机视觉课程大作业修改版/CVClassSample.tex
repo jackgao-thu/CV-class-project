@@ -8,13 +8,13 @@
 \documentclass[a4paper,11pt,onecolumn,UTF8]{article}
 \usepackage{CVClassTemplate}                                  
 \usepackage{xeCJK}
-% \setCJKmainfont[
-%   BoldFont = Source Han Serif SC SemiBold
-% ]{Source Han Serif SC}
+\setCJKmainfont[
+  BoldFont = Source Han Serif SC SemiBold
+]{Source Han Serif SC}
 % 先尝试最简配置
-\setCJKmainfont{Noto Sans CJK SC}
+% \setCJKmainfont{Noto Sans CJK SC}
 % 如果你的环境中没有 Times New Roman 字体，请注释掉下面这一行
-% \setmainfont{Times New Roman}                      
+\setmainfont{Times New Roman}                      
 
 \newcommand{\mysecondauthor}{null}
 \newcommand{\mythirdauthor}{null} 
@@ -54,7 +54,7 @@
 \hypersetup{hidelinks=true}
 
 % 如果没有 .bib 文件，请先注释掉这一行，或创建一个空的 example.bib
-% \addbibresource{example.bib}				
+\addbibresource{example.bib}				
 
 %===============================================================%
 \begin{document}
@@ -186,7 +186,6 @@ CT-Rate 是目前规模最大的公开三维医学影像-文本配对数据集�
 \end{equation}
 其中 $\alpha{=}1.0,\ \beta{=}0.1$。
 负样本项取负号，相当于最大化其困惑度，直接抑制凭空生成报告。
-训练使用混合精度与梯度检查点，保持显存可控。其中，$\text{CE}(x,y)$ 表示图像序列 $x$ 与文本序列 $y$ 之间的交叉熵损失。公式中的负号具有明确的优化含义：在降低正样本损失 $\mathcal{L}_{pos}$ 以确保生成准确性的同时，通过最大化 $\mathcal{L}_{neg}$ 来提升模型在面对干扰输入时的不确定性。
 
 在如上的损失设置中，模型倾向于持续降低正向损失并提高负向损失。负向损失无界膨胀会导致训练过程中$\mathcal{L}_{pos}$出现无界增长，这在模型基于更大规模数据集训练时尤为突出，而$\mathcal{L}_{neg}$的最小化过程则相对缓慢。因此，实验中还采用了梯度裁剪（基于PyTorch框架实现）与负损失上界约束（为损失设置上界，当损失超过该阈值时固定为$max_{loss}$）等辅助优化策略。
 

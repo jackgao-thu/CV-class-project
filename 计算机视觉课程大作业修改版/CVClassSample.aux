@@ -1,0 +1,78 @@
+\relax 
+\abx@aux@refcontext{nyt/global//global/global/global}
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand*\HyPL@Entry[1]{}
+\abx@aux@cite{0}{vinyals2015show}
+\abx@aux@segm{0}{0}{vinyals2015show}
+\abx@aux@cite{0}{xu2015show}
+\abx@aux@segm{0}{0}{xu2015show}
+\abx@aux@cite{0}{irvin2019chexpert}
+\abx@aux@segm{0}{0}{irvin2019chexpert}
+\abx@aux@cite{0}{johnson2019mimic}
+\abx@aux@segm{0}{0}{johnson2019mimic}
+\HyPL@Entry{0<</S/D>>}
+\@writefile{toc}{\contentsline {section}{\numberline {1}引言}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}问题定义与核心难点}{1}{section.2}\protected@file@percent }
+\abx@aux@cite{0}{anderson2018bottom}
+\abx@aux@segm{0}{0}{anderson2018bottom}
+\abx@aux@cite{0}{huang2019attention}
+\abx@aux@segm{0}{0}{huang2019attention}
+\abx@aux@cite{0}{irvin2019chexpert}
+\abx@aux@segm{0}{0}{irvin2019chexpert}
+\abx@aux@cite{0}{johnson2019mimic}
+\abx@aux@segm{0}{0}{johnson2019mimic}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces 方法整体框架：左侧为 CT 体积重采样与切片选择，中间为 qwen2.5-VL 对话模板与视觉 token 组装，右侧展示可选的高斯噪声或异类病例负样本与 $\alpha ,\beta $ 组合损失。 }}{2}{figure.1}\protected@file@percent }
+\newlabel{fig:framework}{{1}{2}{方法整体框架：左侧为 CT 体积重采样与切片选择，中间为 qwen2.5-VL 对话模板与视觉 token 组装，右侧展示可选的高斯噪声或异类病例负样本与 $\alpha ,\beta $ 组合损失。}{figure.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}相关工作与研究动机}{2}{section.3}\protected@file@percent }
+\abx@aux@cite{0}{jing2018automatic}
+\abx@aux@segm{0}{0}{jing2018automatic}
+\abx@aux@cite{0}{li2022blip}
+\abx@aux@segm{0}{0}{li2022blip}
+\abx@aux@cite{0}{alayrac2022flamingo}
+\abx@aux@segm{0}{0}{alayrac2022flamingo}
+\abx@aux@cite{0}{bao2021beit}
+\abx@aux@segm{0}{0}{bao2021beit}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces CT-Rate数据集对比示例：图中为测试集中两份胸部CT图像以及报告描述。两份样本的CT图像存在较大差异，然而由于固定且较为冗余的报告输出模式，模型会输出大量文本完全相同或含义完全相同的报告内容（主要为未出现的病灶）。这降低了模型拟合文本部分报告的难度，促使模型过拟合文本部分，而忽视图像部分的关键病灶信息。 }}{3}{figure.2}\protected@file@percent }
+\newlabel{fig:compare}{{2}{3}{CT-Rate数据集对比示例：图中为测试集中两份胸部CT图像以及报告描述。两份样本的CT图像存在较大差异，然而由于固定且较为冗余的报告输出模式，模型会输出大量文本完全相同或含义完全相同的报告内容（主要为未出现的病灶）。这降低了模型拟合文本部分报告的难度，促使模型过拟合文本部分，而忽视图像部分的关键病灶信息。}{figure.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}模型预备：qwen2.5-VL 概要}{3}{section.4}\protected@file@percent }
+\abx@aux@cite{0}{hamamci2025developinggeneralistfoundationmodels}
+\abx@aux@segm{0}{0}{hamamci2025developinggeneralistfoundationmodels}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces qwen2.5-VL 多模态架构示意。 包含原生动态分辨率 ViT、MRoPE 时间对齐与视觉-语言压缩模块，是本文方法的基座。 }}{4}{figure.3}\protected@file@percent }
+\newlabel{fig:qwen25vl}{{3}{4}{qwen2.5-VL 多模态架构示意。 包含原生动态分辨率 ViT、MRoPE 时间对齐与视觉-语言压缩模块，是本文方法的基座。}{figure.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}数据集与预处理细节}{4}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}CT-Rate 数据集概况}{4}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}影像标准化流程}{4}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}数据封装与存储架构}{5}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}方法}{5}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}高斯噪声构造}{5}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}负向图像构造}{6}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}损失与训练策略}{6}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}评估协议}{6}{subsection.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}实验与结果分析}{6}{section.7}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces 不同设置下的模型性能对比（测试集）}}{7}{table.1}\protected@file@percent }
+\newlabel{tab:main}{{1}{7}{不同设置下的模型性能对比（测试集）}{table.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces $\beta $ 对性能的影响（Ours-Gauss）}}{7}{table.2}\protected@file@percent }
+\newlabel{tab:ablation}{{2}{7}{$\beta $ 对性能的影响（Ours-Gauss）}{table.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}讨论}{7}{section.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 示例胸片（输入影像投影）用于定性分析。 每幅为同分辨率胸部影像切片/投影，展示数据外观与对比度范围。 }}{8}{figure.4}\protected@file@percent }
+\newlabel{fig:cxr_examples}{{4}{8}{示例胸片（输入影像投影）用于定性分析。 每幅为同分辨率胸部影像切片/投影，展示数据外观与对比度范围。}{figure.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}扩展实验与复现实践}{9}{section.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces 训练损失曲线（典型实验）。 横轴为 step，纵轴为 train/loss，展示全程收敛趋势。 }}{9}{figure.5}\protected@file@percent }
+\newlabel{fig:loss}{{5}{9}{训练损失曲线（典型实验）。 横轴为 step，纵轴为 train/loss，展示全程收敛趋势。}{figure.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}结论与未来工作}{9}{section.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}结论}{9}{subsection.10.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}未来工作}{9}{subsection.10.2}\protected@file@percent }
+\abx@aux@read@bbl@mdfivesum{nohash}
+\abx@aux@read@bblrerun
+\abx@aux@defaultrefcontext{0}{alayrac2022flamingo}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{anderson2018bottom}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{bao2021beit}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{hamamci2025developinggeneralistfoundationmodels}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{huang2019attention}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{irvin2019chexpert}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{jing2018automatic}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{johnson2019mimic}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{li2022blip}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{vinyals2015show}{nyt/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{xu2015show}{nyt/global//global/global/global}
+\gdef \@abspage@last{10}

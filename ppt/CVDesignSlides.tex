@@ -1,0 +1,155 @@
+%!TEX program = xelatex
+\documentclass[aspectratio=169]{beamer}
+\usepackage[UTF8]{ctex}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\usetheme{Madrid}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+\title{面向胸部CT报告生成的切片感知对齐与双路负向约束}
+\author{高健 \and 赵越}
+\institute{清华大学人工智能学院}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{任务背景}
+    \begin{itemize}
+        \item 面向胸部三维CT的自动报告生成，需对跨切片病灶给出有依据的描述。
+        \item 通用多模态大模型易走“文本捷径”，忽视稀疏的视觉线索，导致幻觉或模板化输出。
+        \item 目标：提升模型对关键切片的依赖度，抑制无视觉证据的生成。
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{核心挑战}
+    \begin{itemize}
+        \item 图像线索稀疏：有效病灶切片比例低，跨切片关联弱。
+        \item 文本先验过强：报告模板同质化，易被模型滥用。
+        \item 视觉对齐困难：基座 ViT 在医学 CT 上经验不足，时间/空间对齐不稳。
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{方法概览}
+    \begin{columns}[T]
+    \begin{column}{0.55\linewidth}
+        \begin{itemize}
+            \item 基于 qwen2.5-VL 动态分辨率流水线，保持视觉-语言压缩与 MRoPE 时间对齐。
+            \item 增加切片注意力池化与两类负向采样，显式强化视觉依赖。
+            \item 以最小改动接入原对话模板，兼容现有训练/推理链路。
+        \end{itemize}
+    \end{column}
+    \begin{column}{0.45\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../计算机视觉课程大作业修改版/fig/method.pdf}
+    \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{数据示例}
+    \begin{columns}[T]
+    \begin{column}{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../计算机视觉课程大作业修改版/fig/chest_example_1.png}\\
+        \small 病灶切片（存在结节/磨玻璃影）
+    \end{column}
+    \begin{column}{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../计算机视觉课程大作业修改版/fig/chest_example_2.png}
+    \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{对比现象}
+    \centering
+    \includegraphics[width=0.85\linewidth]{../计算机视觉课程大作业修改版/fig/compare.pdf}
+    \vspace{4pt}
+\end{frame}
+
+\begin{frame}{模型架构}
+    \centering
+    \includegraphics[width=0.7\linewidth]{../计算机视觉课程大作业修改版/fig/qwen2.5vl_arc.jpeg}
+    \vspace{4pt}
+\end{frame}
+
+\begin{frame}{双路负向采样}
+    \begin{itemize}
+        \item 噪声负样本（Ours-Gauss）：构造全局高斯噪声体积 + 原报告，迫使模型在无图像证据时输出高困惑度。
+        \item 异类负样本（Ours-Heter）：替换为标签差异显著的 CT 体积 + 原报告，打破文本模板依赖。
+        \item 训练时正负样本成对出现，保持其他字段一致以减少分布偏移。
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{损失与优化}
+    \[
+        \mathcal{L} = \mathbb{E}_{(x,y)\in \mathcal{B}_{\text{pos}}}\! \text{CE}(x,y) - \beta\, \mathbb{E}_{(x,y)\in \mathcal{B}_{\text{neg}}}\! \text{CE}(x,y),\quad \alpha{=}1,\ \beta{=}0.1
+    \]
+    \begin{itemize}
+        \item 负样本项取负号，直接最大化其困惑度，抑制无依据的生成。
+        \item 辅助策略：梯度裁剪 + 负损失上界，避免训练早期发散。
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{数据与预处理}
+    \begin{itemize}
+        \item 数据集：CT-RATE（25k+ 胸部 CT 序列，21k 患者），提供报告与 18 类病灶标签。
+        \item 预处理：HU 转换；重采样至 $0.75 \times 0.75 \times 1.5$ mm；窗宽 [-1000, 1000] 并归一化到 [-1, 1]。
+        \item 存储形态：完整 preprocessed 与 numpy 版 preprocessed\_npy 方便快速加载。
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{训练设置}
+    \begin{itemize}
+        \item 设备：2 张 A100，训练 1 epoch；学习率 $2\times10^{-5}$，batch size 2（梯度累积 8）。
+        \item 与基座一致的视觉压缩与对话模板，仅调整负样本构造与损失。
+        \item 验证集挑选超参，最佳 checkpoint 在测试集评估。
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{训练曲线}
+    \centering
+    \includegraphics[width=0.85\linewidth]{../计算机视觉课程大作业修改版/fig/ours_train_loss.png}
+    \vspace{4pt}
+    \small 正负样本交替训练，损失收敛平稳。
+\end{frame}
+
+\begin{frame}{主要结果}
+    \centering
+    \begin{tabular}{lccc}
+        \toprule
+        方法 & BLEU\_1 相对提升 & BLEU\_4 相对提升 & Coverage 提升 \\
+        \midrule
+        无负向约束（基础） & -- & -- & -- \\
+        Ours-Gauss & +29.1\% & +24.3\% & +14.5\% \\
+        Ours-Heter & +28.7\% & +23.5\% & +13.9\% \\
+        \bottomrule
+    \end{tabular}
+    \vspace{6pt}\\
+    \small 负向采样显著降低幻觉，提升临床相关性。
+\end{frame}
+
+\begin{frame}{局限与讨论}
+    \begin{itemize}
+        \item 正负样本需成对加载，训练吞吐降低。
+        \item 负损失上界的手工设定可能限制进一步收益。
+        \item 仍缺少对病灶局部解释性的显式约束。
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{未来工作}
+    \begin{itemize}
+        \item 引入切片级对比/检索，增强跨切片显式对齐。
+        \item 结合局部病灶提示或掩码监督，提升小病灶敏感度。
+        \item 探索自适应负样本权重调度，平衡语言流畅度与视觉依赖。
+    \end{itemize}
+\end{frame}
+
+\end{document}

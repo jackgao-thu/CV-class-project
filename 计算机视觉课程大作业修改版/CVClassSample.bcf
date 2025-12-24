@@ -2399,6 +2399,7 @@
     <bcf:citekey order="6" intorder="1">li2022blip</bcf:citekey>
     <bcf:citekey order="6" intorder="2">alayrac2022flamingo</bcf:citekey>
     <bcf:citekey order="7" intorder="1">bao2021beit</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">hamamci2025developinggeneralistfoundationmodels</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
