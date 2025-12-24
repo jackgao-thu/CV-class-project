@@ -373,9 +373,6 @@ INPUT ./CVDesignSlides.nav
 INPUT ./CVDesignSlides.nav
 INPUT CVDesignSlides.nav
 OUTPUT CVDesignSlides.xdv
-INPUT ../计算机视觉课程大作业修改版/fig/method.pdf
-INPUT ../计算机视觉课程大作业修改版/fig/method.pdf
-INPUT ../计算机视觉课程大作业修改版/fig/method.pdf
 INPUT ../计算机视觉课程大作业修改版/fig/chest_example_1.png
 INPUT ../计算机视觉课程大作业修改版/fig/chest_example_1.png
 INPUT ../计算机视觉课程大作业修改版/fig/chest_example_1.png
@@ -388,6 +385,9 @@ INPUT ../计算机视觉课程大作业修改版/fig/compare.pdf
 INPUT ../计算机视觉课程大作业修改版/fig/qwen2.5vl_arc.jpeg
 INPUT ../计算机视觉课程大作业修改版/fig/qwen2.5vl_arc.jpeg
 INPUT ../计算机视觉课程大作业修改版/fig/qwen2.5vl_arc.jpeg
+INPUT ../计算机视觉课程大作业修改版/fig/method.pdf
+INPUT ../计算机视觉课程大作业修改版/fig/method.pdf
+INPUT ../计算机视觉课程大作业修改版/fig/method.pdf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm

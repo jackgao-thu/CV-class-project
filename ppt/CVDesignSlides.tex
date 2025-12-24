@@ -38,22 +38,6 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{方法概览}
-    \begin{columns}[T]
-    \begin{column}{0.55\linewidth}
-        \begin{itemize}
-            \item 基于 qwen2.5-VL 动态分辨率流水线，保持视觉-语言压缩与 MRoPE 时间对齐。
-            \item 增加切片注意力池化与两类负向采样，显式强化视觉依赖。
-            \item 以最小改动接入原对话模板，兼容现有训练/推理链路。
-        \end{itemize}
-    \end{column}
-    \begin{column}{0.45\linewidth}
-        \centering
-        \includegraphics[width=\linewidth]{../计算机视觉课程大作业修改版/fig/method.pdf}
-    \end{column}
-    \end{columns}
-\end{frame}
-
 \begin{frame}{数据示例}
     \begin{columns}[T]
     \begin{column}{0.48\linewidth}
@@ -81,11 +65,19 @@
 \end{frame}
 
 \begin{frame}{双路负向采样}
-    \begin{itemize}
-        \item 噪声负样本（Ours-Gauss）：构造全局高斯噪声体积 + 原报告，迫使模型在无图像证据时输出高困惑度。
-        \item 异类负样本（Ours-Heter）：替换为标签差异显著的 CT 体积 + 原报告，打破文本模板依赖。
-        \item 训练时正负样本成对出现，保持其他字段一致以减少分布偏移。
-    \end{itemize}
+    \begin{columns}[T]
+    \begin{column}{0.55\linewidth}
+        \begin{itemize}
+            \item 基于 qwen2.5-VL 动态分辨率流水线，保持视觉-语言压缩与 MRoPE 时间对齐。
+            \item 增加切片注意力池化与两类负向采样，显式强化视觉依赖。
+            \item 以最小改动接入原对话模板，兼容现有训练/推理链路。
+        \end{itemize}
+    \end{column}
+    \begin{column}{0.45\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../计算机视觉课程大作业修改版/fig/method.pdf}
+    \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{损失与优化}
@@ -118,7 +110,6 @@
     \centering
     \includegraphics[width=0.85\linewidth]{../计算机视觉课程大作业修改版/fig/ours_train_loss.png}
     \vspace{4pt}
-    \small 正负样本交替训练，损失收敛平稳。
 \end{frame}
 
 \begin{frame}{主要结果}
